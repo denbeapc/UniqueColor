@@ -16,6 +16,10 @@
         <Setter Property="FontSize" Value="14" />
         <Setter Property="TextColor" Value="{DynamicResource DarkColor}" />
     </Style>
+    <Style x:Key="HeaderLabel" TargetType="Label">
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="TextColor" Value="{DynamicResource DarkColor}" />
+    </Style>
     
     
     <!-- BUTTON THEMES -->
