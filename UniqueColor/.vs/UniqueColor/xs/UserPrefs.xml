@@ -1,11 +1,10 @@
 ﻿<Properties StartupConfiguration="{3CF3C8B1-16E2-4BCF-8311-6976A86B8470}|Default">
-  <MonoDevelop.Ide.ItemProperties.UniqueColor.Android PreferredExecutionTarget="Android.988dd2364c53474544" />
+  <MonoDevelop.Ide.ItemProperties.UniqueColor.Android AndroidDesignerPreferredTheme="Theme.DeviceDefault.NoActionBar.Fullscreen" PreferredExecutionTarget="Android.988dd2364c53474544" />
   <MonoDevelop.Ide.Workbench ActiveDocument="UniqueColor/Pages/ColorsPage.xaml.cs">
     <Files>
-      <File FileName="UniqueColor/ViewModels/ColorsViewModel.cs" Line="75" Column="38" />
-      <File FileName="UniqueColor/Pages/ColorsPage.xaml" Line="68" Column="60" />
-      <File FileName="UniqueColor/Pages/ColorsPage.xaml.cs" Line="62" Column="40" />
-      <File FileName="UniqueColor/Themes/MainTheme.xaml" Line="20" Column="47" />
+      <File FileName="UniqueColor/Pages/ColorsPage.xaml" Line="17" Column="50" />
+      <File FileName="UniqueColor/Pages/ColorsPage.xaml.cs" Line="66" Column="13" />
+      <File FileName="UniqueColor/ViewModels/ColorsViewModel.cs" Line="85" Column="9" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
