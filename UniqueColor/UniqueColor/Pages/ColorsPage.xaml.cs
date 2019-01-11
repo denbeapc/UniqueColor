@@ -22,13 +22,13 @@ namespace UniqueColor.Pages
         {
             base.SetupBindings(compositeDisposable);
 
-            //this.WhenAnyValue(x => x.ViewModel)
-                //.Where(x => x == null || !x.Initialized)
-                //.SelectMany(x => x.LoadCommand.Execute())
-                //.Subscribe()
-                //.DisposeWith(compositeDisposable);
-
-            this.Bind(this.ViewModel, x => x.GenerateIsLoading, x => x.generateColorsIndicator.IsRunning)
+            this.WhenAnyValue(x => x.ViewModel.CanFillLayout)
+                .Where(x => x)
+                .Subscribe(x =>
+                {
+                    ColorHelper colorHelper = new ColorHelper();
+                    FillColorLayout(colorHelper);
+                })
                 .DisposeWith(compositeDisposable);
         }
 
@@ -36,7 +36,8 @@ namespace UniqueColor.Pages
         {
             base.OnAppearing();
 
-            ViewModel.LoadCommand.Execute();
+            ViewModel.NumberOfColors = 7;
+            ViewModel.EntryText = ViewModel.NumberOfColors.ToString();
         }
 
         void Handle_GeneratePressed(object sender, EventArgs e)
@@ -44,25 +45,12 @@ namespace UniqueColor.Pages
             if (sender == null || e == null)
                 return;
 
-            ViewModel.ButtonEnabled = false;
-            ViewModel.GenerateIsLoading = true;
-
             ViewModel.Colors.Clear();
             colorsLayout.Children.Clear();
             if (ViewModel.NumberOfColors != 0)
             {
-                for (int count = 0; count < ViewModel.NumberOfColors; count++)
-                {
-                    ViewModel.GenerateRandomColor(Color.White);
-                    Thread.Sleep(50);
-                }
-
-                ColorHelper colorHelper = new ColorHelper();
-                FillColorLayout(colorHelper);
+                ViewModel.GenerateRandomColors();
             }
-
-            ViewModel.GenerateIsLoading = false;
-            ViewModel.ButtonEnabled = true;
         }
 
         void Handle_ClearPressed(object sender, EventArgs e)
@@ -88,14 +76,16 @@ namespace UniqueColor.Pages
                 {
                     Text = colorHelper.GetHexString(color),
                     VerticalOptions = LayoutOptions.Center,
-                    TextColor = Color.FromHex("#2d2d2d"),
-                    Margin= new Thickness(7, 7, 0, 0),
+                    TextColor = Color.White,
+                    Margin= new Thickness(10, 10, 0, 0),
                     FontSize = 16
                 };
 
                 parentContainer.Children.Add(label);
                 colorsLayout.Children.Add(parentContainer);
             }
+
+            ViewModel.CanFillLayout = false;
         }
     }
 }

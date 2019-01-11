@@ -121,6 +121,19 @@
           "lib/monoandroid81/ReactiveUI.dll": {}
         }
       },
+      "ReactiveUI.XamForms/9.7.2": {
+        "type": "package",
+        "dependencies": {
+          "ReactiveUI": "9.7.2",
+          "Xamarin.Forms": "3.3.0.967583"
+        },
+        "compile": {
+          "lib/netstandard2.0/ReactiveUI.XamForms.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/ReactiveUI.XamForms.dll": {}
+        }
+      },
       "Splat/5.3.3": {
         "type": "package",
         "frameworkAssemblies": [
@@ -1186,6 +1199,20 @@
         "lib/xamarintvos10/ReactiveUI.xml",
         "reactiveui.9.7.2.nupkg.sha512",
         "reactiveui.nuspec"
+      ]
+    },
+    "ReactiveUI.XamForms/9.7.2": {
+      "sha512": "3Mj+Qw+e4qHKZazJWQvLVu6CJWGM38PD3zss2OiI3nx702Du8nmG8PWtjxYrsZPt38ZDJ+a3HdL941ZwMx70Qg==",
+      "type": "package",
+      "path": "reactiveui.xamforms/9.7.2",
+      "files": [
+        ".signature.p7s",
+        "LICENSE/LICENSE",
+        "lib/netstandard2.0/ReactiveUI.XamForms.dll",
+        "lib/netstandard2.0/ReactiveUI.XamForms.pdb",
+        "lib/netstandard2.0/ReactiveUI.XamForms.xml",
+        "reactiveui.xamforms.9.7.2.nupkg.sha512",
+        "reactiveui.xamforms.nuspec"
       ]
     },
     "Splat/5.3.3": {
@@ -4328,6 +4355,7 @@
     "MonoAndroid,Version=v8.1": [
       "PropertyChanged.Fody >= 2.6.0",
       "ReactiveUI >= 9.7.2",
+      "ReactiveUI.XamForms >= 9.7.2",
       "Splat >= 5.3.3",
       "Xamarin.Android.Support.Design >= 27.0.2.1",
       "Xamarin.Android.Support.v4 >= 27.0.2.1",
@@ -4372,6 +4400,10 @@
             "version": "[2.6.0, )"
           },
           "ReactiveUI": {
+            "target": "Package",
+            "version": "[9.7.2, )"
+          },
+          "ReactiveUI.XamForms": {
             "target": "Package",
             "version": "[9.7.2, )"
           },

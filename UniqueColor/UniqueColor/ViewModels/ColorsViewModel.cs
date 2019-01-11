@@ -3,11 +3,14 @@ using System.Collections.ObjectModel;
 using System.Reactive;
 using System.Reactive.Disposables;
 using System.Reactive.Linq;
+using System.Threading.Tasks;
 using ReactiveUI;
 using Splat;
 using UniqueColor.Core;
 using UniqueColor.Core.Interfaces;
+using UniqueColor.Helpers;
 using Xamarin.Forms;
+using Xamarin.Forms.Internals;
 
 namespace UniqueColor.ViewModels
 {
@@ -16,19 +19,86 @@ namespace UniqueColor.ViewModels
         public ColorsViewModel(INavigationService navigationService = null) 
             : base(navigationService ?? Locator.Current.GetService<INavigationService>())
         {
-            LoadCommand = ReactiveCommand.Create(() =>
-            {
-                NumberOfColors = 7;
-                EntryText = NumberOfColors.ToString();
-            });
-            LoadCommand.ObserveOn(RxApp.MainThreadScheduler);
-            LoadCommand.IsExecuting.StartWith(false).ToProperty(this, x => x.IsLoading, out _isLoading);
-            LoadCommand.DisposeWith(SubscriptionDisposables);
+            Colors = new ObservableCollection<Color>();
+
+            this.WhenAnyValue(x => x.EntryText)
+                .Subscribe(x =>
+                {
+                    int tryParseNum = 0;
+                    if (int.TryParse(EntryText, out tryParseNum))
+                    {
+                        ButtonEnabled = tryParseNum <= 20;
+                    }
+                    else
+                    {
+                        ButtonEnabled = false;
+                    }
+
+                    NumberOfColors = (ButtonEnabled) ? tryParseNum : -1;
+                })
+                .DisposeWith(SubscriptionDisposables);
         }
 
-        public void GenerateRandomColor(Color? mix = null)
+        public void GenerateRandomColors()
         {
-            Random random = new Random();
+            Device.BeginInvokeOnMainThread(() =>
+            {
+                ButtonEnabled = false;
+
+                ColorHelper colorHelper = new ColorHelper();
+                Random random = new Random();
+                Color color;
+                bool isDifferent = false;
+
+                for (int count = 0; count < NumberOfColors; count++)
+                {
+                    if (count != 0)
+                    {
+                        do
+                        {
+                            color = GenerateColor(random, Color.White);
+                            CheckRGBSimilarity(Color.FromRgb(color.R, color.G, color.B), out isDifferent);
+                        } while (!isDifferent);
+
+                        Colors.Add(color);
+                    }
+                    else
+                    {
+                        Colors.Add(GenerateColor(random, Color.White));
+                    }
+                }
+
+                ButtonEnabled = true;
+                CanFillLayout = true;
+            });
+        }
+
+        private void CheckRGBSimilarity(Color newColor, out bool isDifferent)
+        {
+            long rmean = 0, r = 0, g = 0, b = 0;
+            double euclidDistance = 100;
+            bool trigger = false;
+
+            foreach (var color in Colors)
+            {
+                rmean = ((long)(color.R * 255) + (long)(newColor.R * 255)) / 2;
+                r = (long)(color.R * 255) - (long)(newColor.R * 255);
+                g = (long)(color.G * 255) - (long)(newColor.G * 255);
+                b = (long)(color.B * 255) - (long)(newColor.B * 255);
+                euclidDistance = Math.Sqrt((((512 + rmean) * r * r) >> 8) + 4 * g * g + (((767 - rmean) * b * b) >> 8));
+
+                if (euclidDistance <= 62)
+                {
+                    trigger = true;
+                    break;
+                }
+            }
+
+            isDifferent = !trigger;
+        }
+
+        private Color GenerateColor(Random random, Color? mix = null)
+        {
             int red = random.Next(80, 256);
             int green = random.Next(80, 256);
             int blue = random.Next(80, 256);
@@ -41,7 +111,7 @@ namespace UniqueColor.ViewModels
                 blue = (int)((blue + ((Color)mix).B) / 2);
             }
 
-            Colors.Add(Color.FromRgb(red, green, blue));
+            return Color.FromRgb(red, green, blue);
         }
 
         public ReactiveCommand<Unit, Unit> LoadCommand { get; private set; }
@@ -69,11 +139,11 @@ namespace UniqueColor.ViewModels
             set { this.RaiseAndSetIfChanged(ref buttonEnabled, value); }
         }
 
-        public bool generateIsLoading;
-        public bool GenerateIsLoading
+        private bool canFillLayout;
+        public bool CanFillLayout
         {
-            get { return generateIsLoading; }
-            set { this.RaiseAndSetIfChanged(ref generateIsLoading, value); }
+            get { return canFillLayout; }
+            set { this.RaiseAndSetIfChanged(ref canFillLayout, value); }
         }
     }
 }

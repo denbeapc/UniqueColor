@@ -30,7 +30,7 @@ namespace UniqueColor
 
         public void SetMainPage()
         {
-            SetMainPage(new MainNavigationPage(_compositionRoot.CreatePage(NavConstants.main)));
+            SetMainPage(_compositionRoot.CreatePage(NavConstants.colors));
         }
 
         private void SetMainPage(Page page)

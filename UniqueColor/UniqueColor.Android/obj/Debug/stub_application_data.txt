@@ -1,0 +1,2 @@
+android.app.Application
+com.f5software.Unique_Color

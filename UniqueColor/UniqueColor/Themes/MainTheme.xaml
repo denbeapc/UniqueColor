@@ -48,11 +48,12 @@
     <Style x:Key="DefaultEntry" TargetType="Entry">
         <Setter Property="FontSize" Value="14" />
         <Setter Property="Keyboard" Value="Numeric" />
-        <Setter Property="MaxLength" Value="3" />
+        <Setter Property="MaxLength" Value="2" />
         <Setter Property="TextColor" Value="{DynamicResource DarkColor}" />
     </Style>
     
     
     <!-- CONVERTERS -->
+    <converters:BoolToColorConverter x:Key="boolToColor"/>
     <converters:InverseBoolConverter x:Key="inverseBool"/>
 </ResourceDictionary>

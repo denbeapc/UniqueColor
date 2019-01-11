@@ -52,6 +52,7 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MenuViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\SplatRegistrar.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\BoolToColorConverter.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Controls\" />

@@ -69,8 +69,7 @@ namespace UniqueColor
         public IViewFor CreateMainPage()
         {
             var mainPage = new MainPage();
-            mainPage.Master = CreatePage(NavConstants.menu);
-            mainPage.Detail = new MainNavigationPage(CreatePage(NavConstants.colors));
+            //mainPage = CreatePage(NavConstants.colors);
 
             return mainPage;
         }
