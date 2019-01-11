@@ -10,19 +10,59 @@
   </PropertyGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)App.xaml" />
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)MainPage.xaml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Themes\MainTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\ColorsPage.xaml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\MenuPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)MainPage.xaml.cs">
-      <DependentUpon>MainPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)UniqueColorGenerator.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controls\CustomEntry.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\ColorHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\InverseBoolConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Themes\MainTheme.xaml.cs">
+      <DependentUpon>MainTheme.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Core\BasePage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\BaseViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ColorsViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Interfaces\IDestructible.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\ColorsPage.xaml.cs">
+      <DependentUpon>ColorsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Core\AppStartPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CompositionRoot.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Interfaces\INavigationService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Services\NavigationService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Actions\BaseAction.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Actions\NavigateAction.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\NavConstants.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\MainPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\MainViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\MainNavigationPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\MenuPage.xaml.cs">
+      <DependentUpon>MenuPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MenuViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\SplatRegistrar.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Controls\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Converters\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Themes\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Core\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Pages\" />
+    <Folder Include="$(MSBuildThisFileDirectory)ViewModels\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Core\Interfaces\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Core\Services\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Core\Actions\" />
   </ItemGroup>
 </Project>

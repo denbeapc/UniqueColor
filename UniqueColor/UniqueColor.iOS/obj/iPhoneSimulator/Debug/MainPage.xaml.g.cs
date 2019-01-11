@@ -8,13 +8,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("UniqueColor.iOS.MainPage.xaml", "MainPage.xaml", typeof(global::UniqueColor.MainPage))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("UniqueColor.iOS.MainPage.xaml", "MainPage.xaml", typeof(global::UniqueColor.Pages.MainPage))]
 
-namespace UniqueColor {
+namespace UniqueColor.Pages {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("/Users/piersondenbeau/Projects/UniqueColor/UniqueColor/MainPage.xaml")]
-    public partial class MainPage : global::Xamarin.Forms.ContentPage {
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("/Users/piersondenbeau/unique-color/UniqueColor/UniqueColor/Pages/MainPage.xaml")]
+    public partial class MainPage : global::UniqueColor.Core.BasePage<global::UniqueColor.ViewModels.MainPageViewModel> {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::UniqueColor.Controls.CustomEntry entry;

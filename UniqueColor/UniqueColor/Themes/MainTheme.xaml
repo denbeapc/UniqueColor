@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+                    xmlns:controls="clr-namespace:UniqueColor.Controls"
+                    xmlns:converters="clr-namespace:UniqueColor.Converters"
+                    x:Class="UniqueColor.Themes.MainTheme">
+    
+    <!-- APP COLORS -->
+    <Color x:Key="PrimaryColor">#4286F4</Color>
+    <Color x:Key="ErrorColor">#F45341</Color>
+    <Color x:Key="DarkColor">#2D2D2D</Color>
+    
+    
+    <!-- LABEL THEMES -->
+    <Style x:Key="DefaultLabel" TargetType="Label">
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="TextColor" Value="{DynamicResource DarkColor}" />
+    </Style>
+    
+    
+    <!-- BUTTON THEMES -->
+    <Style x:Key="DefaultButton" TargetType="Button">
+        <Setter Property="TextColor" Value="{DynamicResource PrimaryColor}" />
+        <Setter Property="BackgroundColor" Value="White" />
+        <Setter Property="BorderColor" Value="{DynamicResource PrimaryColor}" />
+        <Setter Property="BorderWidth" Value="1" />
+        <Setter Property="BorderRadius" Value="20" />
+        <Setter Property="WidthRequest" Value="150" />
+        <Setter Property="HeightRequest" Value="43" />
+        <Setter Property="FontSize" Value="15" />
+    </Style>
+    <Style x:Key="ErrorButton" TargetType="Button" BasedOn="{StaticResource DefaultButton}">
+        <Setter Property="TextColor" Value="{DynamicResource ErrorColor}" />
+        <Setter Property="BorderColor" Value="{DynamicResource ErrorColor}" />
+    </Style>
+    
+    
+    <!-- BOXVIEW THEMES -->
+    <Style x:Key="TextFieldUnderline" TargetType="BoxView">
+        <Setter Property="VerticalOptions" Value="End" />
+        <Setter Property="HeightRequest" Value="1" />
+        <Setter Property="BackgroundColor" Value="{DynamicResource PrimaryColor}" />
+        <Setter Property="Margin" Value="0,0,0,5" />
+    </Style>
+    
+    
+    <!-- ENTRY THEMES -->
+    <Style x:Key="DefaultEntry" TargetType="Entry">
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Keyboard" Value="Numeric" />
+        <Setter Property="MaxLength" Value="3" />
+        <Setter Property="TextColor" Value="{DynamicResource DarkColor}" />
+    </Style>
+    
+    
+    <!-- CONVERTERS -->
+    <converters:InverseBoolConverter x:Key="inverseBool"/>
+</ResourceDictionary>

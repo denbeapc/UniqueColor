@@ -1,5 +1,15 @@
-System.Runtime
+DynamicData
 FormsViewGroup
+PropertyChanged
+ReactiveUI
+Splat
+System.Reactive.Core
+System.Reactive
+System.Reactive.Interfaces
+System.Reactive.Linq
+System.Reactive.PlatformServices
+System.Reactive.Providers
+System.Runtime
 Xamarin.Android.Arch.Core.Common
 Xamarin.Android.Arch.Lifecycle.Common
 Xamarin.Android.Arch.Lifecycle.Runtime

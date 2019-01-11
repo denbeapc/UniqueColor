@@ -13,7 +13,7 @@
 namespace UniqueColor {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("/Users/piersondenbeau/Projects/UniqueColor/UniqueColor/App.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("/Users/piersondenbeau/unique-color/UniqueColor/UniqueColor/App.xaml")]
     public partial class App : global::Xamarin.Forms.Application {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]

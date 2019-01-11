@@ -24,5 +24,6 @@
     <Import Project="$(NuGetPackageRoot)xamarin.android.support.transition/27.0.2.1/build/MonoAndroid81/Xamarin.Android.Support.Transition.targets" Condition="Exists('$(NuGetPackageRoot)xamarin.android.support.transition/27.0.2.1/build/MonoAndroid81/Xamarin.Android.Support.Transition.targets')" />
     <Import Project="$(NuGetPackageRoot)xamarin.android.support.design/27.0.2.1/build/MonoAndroid81/Xamarin.Android.Support.Design.targets" Condition="Exists('$(NuGetPackageRoot)xamarin.android.support.design/27.0.2.1/build/MonoAndroid81/Xamarin.Android.Support.Design.targets')" />
     <Import Project="$(NuGetPackageRoot)xamarin.forms/3.3.0.967583/build/Xamarin.Forms.targets" Condition="Exists('$(NuGetPackageRoot)xamarin.forms/3.3.0.967583/build/Xamarin.Forms.targets')" />
+    <Import Project="$(NuGetPackageRoot)fody/3.3.2/build/Fody.targets" Condition="Exists('$(NuGetPackageRoot)fody/3.3.2/build/Fody.targets')" />
   </ImportGroup>
 </Project>

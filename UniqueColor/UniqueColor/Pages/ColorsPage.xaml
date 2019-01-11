@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<core:BasePage xmlns="http://xamarin.com/schemas/2014/forms" 
+               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+               xmlns:controls="clr-namespace:UniqueColor.Controls"
+               xmlns:core="clr-namespace:UniqueColor.Core"
+               xmlns:vm="clr-namespace:UniqueColor.ViewModels"
+               x:TypeArguments="vm:ColorsViewModel"
+               x:Class="UniqueColor.Pages.ColorsPage">
+    <core:BasePage.Content>
+        <StackLayout Spacing="20">
+            <Grid Margin="17,15,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="48"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="170"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+            
+                <Label Text="Number of colors"
+                       Style="{DynamicResource DefaultLabel}"
+                       VerticalOptions="Center"/>
+                
+                <controls:CustomEntry x:Name="entry"
+                                      Style="{DynamicResource DefaultEntry}"
+                                      Text="{Binding EntryText}"
+                                      Placeholder="number of colors"
+                                      Grid.Column="1"/>
+                
+                <BoxView Style="{DynamicResource TextFieldUnderline}"
+                         Grid.ColumnSpan="2"/>
+            </Grid>
+            
+            <StackLayout Orientation="Horizontal"
+                         HorizontalOptions="Center"
+                         Margin="15,0">
+                <Grid HorizontalOptions="Center">
+                    <Button x:Name="generateButton"
+                            Text="Generate Colors"
+                            Style="{DynamicResource DefaultButton}"
+                            IsEnabled="{Binding ButtonEnabled}"
+                            Pressed="Handle_GeneratePressed"/>
+                    <ActivityIndicator InputTransparent="true"
+                                       VerticalOptions="Center"
+                                       HorizontalOptions="Center"
+                                       x:Name="generateColorsIndicator"/>
+                </Grid>
+                
+                <Button x:Name="clearButton"
+                        Text="Clear"
+                        Style="{DynamicResource ErrorButton}"
+                        HorizontalOptions="Center"
+                        Pressed="Handle_ClearPressed"/>
+            </StackLayout>
+            
+            <ScrollView>
+                <StackLayout x:Name="colorsLayout"
+                             Spacing="1"/>
+            </ScrollView>
+        </StackLayout>
+    </core:BasePage.Content>
+</core:BasePage>
