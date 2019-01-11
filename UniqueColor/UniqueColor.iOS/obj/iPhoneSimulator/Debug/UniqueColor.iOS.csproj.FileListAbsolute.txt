@@ -132,4 +132,3 @@
 /Users/piersondenbeau/unique-color/UniqueColor/UniqueColor.iOS/obj/iPhoneSimulator/Debug/UniqueColor.iOS.csproj.CopyComplete
 /Users/piersondenbeau/unique-color/UniqueColor/UniqueColor.iOS/obj/iPhoneSimulator/Debug/UniqueColor.iOS.exe
 /Users/piersondenbeau/unique-color/UniqueColor/UniqueColor.iOS/obj/iPhoneSimulator/Debug/UniqueColor.iOS.pdb
-/Users/piersondenbeau/unique-color/UniqueColor/UniqueColor.iOS/obj/iPhoneSimulator/Debug/Pages/MenuPage.xaml.g.cs

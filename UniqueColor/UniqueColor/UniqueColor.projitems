@@ -15,10 +15,6 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\ColorsPage.xaml" />
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Pages\MenuPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
@@ -46,11 +42,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Core\NavConstants.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\MainPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\MainViewModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Core\MainNavigationPage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Pages\MenuPage.xaml.cs">
-      <DependentUpon>MenuPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MenuViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\SplatRegistrar.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\BoolToColorConverter.cs" />
   </ItemGroup>

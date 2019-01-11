@@ -39,10 +39,6 @@ namespace UniqueColor
                                     () => CreateMainPage(),
                                     () => new MainViewModel(this.navigationService.Value));
 
-            navService.RegisterView(NavConstants.menu,
-                                    () => new MenuPage(),
-                                    () => new MenuViewModel());
-
             navService.RegisterView(NavConstants.colors,
                                     () => new ColorsPage(),
                                     () => new ColorsViewModel());
@@ -69,7 +65,6 @@ namespace UniqueColor
         public IViewFor CreateMainPage()
         {
             var mainPage = new MainPage();
-            //mainPage = CreatePage(NavConstants.colors);
 
             return mainPage;
         }

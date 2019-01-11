@@ -9,8 +9,6 @@ namespace UniqueColor.Core
         {
         }
 
-        public bool IsPresentedByBackButton { get; set; }
-
         public MainViewModel ViewModel
         {
             get
