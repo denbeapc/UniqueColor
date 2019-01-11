@@ -1,14 +1,15 @@
-﻿<Properties StartupConfiguration="{AD6C7223-ABD3-44AF-8C95-4E82BC4BA5EB}|Default">
-  <MonoDevelop.Ide.ItemProperties.UniqueColor.Android PreferredExecutionTarget="Android.988dd2364c53474544" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="UniqueColor.Android/MainActivity.cs">
+﻿<Properties StartupConfiguration="{3CF3C8B1-16E2-4BCF-8311-6976A86B8470}|Default">
+  <MonoDevelop.Ide.ItemProperties.UniqueColor.Android AndroidDesignerPreferredTheme="Theme.DeviceDefault.NoActionBar.Fullscreen" PreferredExecutionTarget="Android.988dd2364c53474544" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="UniqueColor/Pages/ColorsPage.xaml.cs">
     <Files>
-      <File FileName="UniqueColor.Android/MainActivity.cs" Line="39" Column="13" />
+      <File FileName="UniqueColor/Pages/ColorsPage.xaml" Line="17" Column="50" />
+      <File FileName="UniqueColor/Pages/ColorsPage.xaml.cs" Line="66" Column="13" />
+      <File FileName="UniqueColor/ViewModels/ColorsViewModel.cs" Line="85" Column="9" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.UniqueColor FirstBuild="True" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.UniqueColor.iOS automaticSigning="False" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.427F75C2-EDF8-4259-8B47-E580DD79561A" />
+  <MonoDevelop.Ide.ItemProperties.UniqueColor.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.427F75C2-EDF8-4259-8B47-E580DD79561A" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

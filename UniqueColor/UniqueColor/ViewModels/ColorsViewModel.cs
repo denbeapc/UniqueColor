@@ -27,7 +27,7 @@ namespace UniqueColor.ViewModels
                     int tryParseNum = 0;
                     if (int.TryParse(EntryText, out tryParseNum))
                     {
-                        ButtonEnabled = tryParseNum <= 20;
+                        ButtonEnabled = tryParseNum <= 50;
                     }
                     else
                     {
@@ -43,11 +43,12 @@ namespace UniqueColor.ViewModels
         {
             Device.BeginInvokeOnMainThread(() =>
             {
+                CancelGenerate = false;
                 ButtonEnabled = false;
 
                 ColorHelper colorHelper = new ColorHelper();
                 Random random = new Random();
-                Color color;
+                Color color = Color.White;
                 bool isDifferent = false;
 
                 for (int count = 0; count < NumberOfColors; count++)
@@ -56,20 +57,27 @@ namespace UniqueColor.ViewModels
                     {
                         do
                         {
-                            color = GenerateColor(random, Color.White);
+                            if (CancelGenerate)
+                                break;
+
+                            color = GenerateColor(random);
                             CheckRGBSimilarity(Color.FromRgb(color.R, color.G, color.B), out isDifferent);
+
                         } while (!isDifferent);
+
+                        if (CancelGenerate)
+                            break;
 
                         Colors.Add(color);
                     }
                     else
                     {
-                        Colors.Add(GenerateColor(random, Color.White));
+                        Colors.Add(GenerateColor(random));
                     }
                 }
 
                 ButtonEnabled = true;
-                CanFillLayout = true;
+                CanFillLayout = !CancelGenerate;
             });
         }
 
@@ -87,7 +95,7 @@ namespace UniqueColor.ViewModels
                 b = (long)(color.B * 255) - (long)(newColor.B * 255);
                 euclidDistance = Math.Sqrt((((512 + rmean) * r * r) >> 8) + 4 * g * g + (((767 - rmean) * b * b) >> 8));
 
-                if (euclidDistance <= 62)
+                if (euclidDistance <= 95)
                 {
                     trigger = true;
                     break;
@@ -97,19 +105,11 @@ namespace UniqueColor.ViewModels
             isDifferent = !trigger;
         }
 
-        private Color GenerateColor(Random random, Color? mix = null)
+        private Color GenerateColor(Random random)
         {
-            int red = random.Next(80, 256);
-            int green = random.Next(80, 256);
-            int blue = random.Next(80, 256);
-
-            // mix the color
-            if (mix != null)
-            {
-                red = (int)((red + ((Color)mix).R) / 2);
-                green = (int)((green + ((Color)mix).G) / 2);
-                blue = (int)((blue + ((Color)mix).B) / 2);
-            }
+            int red = random.Next(30, 256);
+            int green = random.Next(30, 256);
+            int blue = random.Next(30, 256);
 
             return Color.FromRgb(red, green, blue);
         }
@@ -144,6 +144,13 @@ namespace UniqueColor.ViewModels
         {
             get { return canFillLayout; }
             set { this.RaiseAndSetIfChanged(ref canFillLayout, value); }
+        }
+
+        private bool generateFailed;
+        public bool CancelGenerate
+        {
+            get { return generateFailed; }
+            set { this.RaiseAndSetIfChanged(ref generateFailed, value); }
         }
     }
 }

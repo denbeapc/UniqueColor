@@ -13,10 +13,10 @@
                     <RowDefinition Height="48"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="170"/>
+                    <ColumnDefinition Width="150"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-            
+                
                 <Label Text="Number of colors"
                        Style="{DynamicResource DefaultLabel}"
                        VerticalOptions="Center"/>

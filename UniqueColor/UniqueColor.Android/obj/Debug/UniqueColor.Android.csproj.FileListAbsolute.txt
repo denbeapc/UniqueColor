@@ -5,7 +5,6 @@
 /Users/piersondenbeau/unique-color/UniqueColor/UniqueColor.Android/obj/Debug/App.xaml.g.cs
 /Users/piersondenbeau/unique-color/UniqueColor/UniqueColor.Android/obj/Debug/Themes/MainTheme.xaml.g.cs
 /Users/piersondenbeau/unique-color/UniqueColor/UniqueColor.Android/obj/Debug/Pages/ColorsPage.xaml.g.cs
-/Users/piersondenbeau/unique-color/UniqueColor/UniqueColor.Android/obj/Debug/Pages/MenuPage.xaml.g.cs
 /Users/piersondenbeau/unique-color/UniqueColor/UniqueColor.Android/obj/Debug/UniqueColor.Android.csproj.CoreCompileInputs.cache
 /Users/piersondenbeau/unique-color/UniqueColor/UniqueColor.Android/bin/Debug/UniqueColor.Android.dll
 /Users/piersondenbeau/unique-color/UniqueColor/UniqueColor.Android/bin/Debug/UniqueColor.Android.pdb
@@ -34,6 +33,7 @@
 /Users/piersondenbeau/unique-color/UniqueColor/UniqueColor.Android/obj/Debug/R.cs.flag
 /Users/piersondenbeau/unique-color/UniqueColor/UniqueColor.Android/obj/Debug/R.txt
 /Users/piersondenbeau/unique-color/UniqueColor/UniqueColor.Android/obj/Debug/uploadflags.txt
+/Users/piersondenbeau/unique-color/UniqueColor/UniqueColor.Android/obj/Debug/UniqueColor.Android.csprojAssemblyReference.cache
 /Users/piersondenbeau/unique-color/UniqueColor/UniqueColor.Android/bin/Debug/Mono.Android.pdb
 /Users/piersondenbeau/unique-color/UniqueColor/UniqueColor.Android/bin/Debug/ReactiveUI.pdb
 /Users/piersondenbeau/unique-color/UniqueColor/UniqueColor.Android/bin/Debug/ReactiveUI.XamForms.pdb

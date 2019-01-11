@@ -5,7 +5,6 @@ namespace UniqueColor.Core
     {
         public const string main = "main";
 
-        public const string menu = "menu";
         public const string colors = "colors";
     }
 }
