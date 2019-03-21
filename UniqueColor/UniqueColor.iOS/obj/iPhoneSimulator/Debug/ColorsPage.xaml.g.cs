@@ -23,9 +23,6 @@ namespace UniqueColor.Pages {
         private global::Xamarin.Forms.Button generateButton;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        private global::Xamarin.Forms.ActivityIndicator generateColorsIndicator;
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.Button clearButton;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
@@ -36,7 +33,6 @@ namespace UniqueColor.Pages {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(ColorsPage));
             entry = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::UniqueColor.Controls.CustomEntry>(this, "entry");
             generateButton = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "generateButton");
-            generateColorsIndicator = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ActivityIndicator>(this, "generateColorsIndicator");
             clearButton = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "clearButton");
             colorsLayout = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.StackLayout>(this, "colorsLayout");
         }

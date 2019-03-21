@@ -1,11 +1,26 @@
 ﻿<Properties StartupConfiguration="{3CF3C8B1-16E2-4BCF-8311-6976A86B8470}|Default">
   <MonoDevelop.Ide.ItemProperties.UniqueColor.Android AndroidDesignerPreferredTheme="Theme.DeviceDefault.NoActionBar.Fullscreen" PreferredExecutionTarget="Android.988dd2364c53474544" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="UniqueColor/Pages/ColorsPage.xaml.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="UniqueColor/Pages/ColorsPage.xaml">
     <Files>
-      <File FileName="UniqueColor/Pages/ColorsPage.xaml" Line="17" Column="50" />
-      <File FileName="UniqueColor/Pages/ColorsPage.xaml.cs" Line="66" Column="13" />
-      <File FileName="UniqueColor/ViewModels/ColorsViewModel.cs" Line="85" Column="9" />
+      <File FileName="UniqueColor/Pages/ColorsPage.xaml" Line="51" Column="62" />
+      <File FileName="UniqueColor/Pages/ColorsPage.xaml.cs" Line="90" Column="45" />
+      <File FileName="UniqueColor/ViewModels/ColorsViewModel.cs" Line="1" Column="1" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="UniqueColor" expanded="True">
+            <Node name="UniqueColor" expanded="True">
+              <Node name="Pages" expanded="True">
+                <Node name="ColorsPage.xaml" expanded="True" selected="True" />
+              </Node>
+              <Node name="Themes" expanded="True" />
+              <Node name="ViewModels" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

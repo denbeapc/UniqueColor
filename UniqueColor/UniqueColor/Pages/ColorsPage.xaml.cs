@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
 using System.Reactive.Disposables;
 using System.Reactive.Linq;
+using System.Text;
 using System.Threading;
 using ReactiveUI;
 using UniqueColor.Core;
@@ -50,6 +53,41 @@ namespace UniqueColor.Pages
             if (ViewModel.NumberOfColors != 0)
             {
                 ViewModel.GenerateRandomColors();
+            }
+        }
+
+        void Handle_SavePressed(object sender, EventArgs e)
+        {
+            if (sender == null || e == null)
+                return;
+
+            if (ViewModel.Colors.Count == 0)
+            {
+                Debug.WriteLine("No colors");
+            }
+            else
+            {
+                ColorHelper colorHelper = new ColorHelper();
+                StringBuilder stringBuilder = new StringBuilder();
+
+                stringBuilder.Append("{ ");
+                foreach (var color in ViewModel.Colors)
+                {
+                    stringBuilder.Append("\"");
+                    stringBuilder.Append(colorHelper.GetHexString(color));
+                    if (color == ViewModel.Colors.LastOrDefault())
+                    {
+                        stringBuilder.Append("\" ");
+                    }
+                    else
+                    {
+                        stringBuilder.Append("\", ");
+                    }
+                }
+                stringBuilder.Append("}");
+
+                var listString = stringBuilder.ToString();
+                Debug.WriteLine(listString);
             }
         }
 

@@ -4375,8 +4375,9 @@
       "projectName": "UniqueColor.Android",
       "projectPath": "/Users/piersondenbeau/unique-color/UniqueColor/UniqueColor.Android/UniqueColor.Android.csproj",
       "packagesPath": "/Users/piersondenbeau/.nuget/packages/",
-      "outputPath": "/Users/piersondenbeau/unique-color/UniqueColor/UniqueColor.Android/obj",
+      "outputPath": "/Users/piersondenbeau/unique-color/UniqueColor/UniqueColor.Android/obj/",
       "projectStyle": "PackageReference",
+      "skipContentFileWrite": true,
       "configFilePaths": [
         "/Users/piersondenbeau/.config/NuGet/NuGet.Config"
       ],

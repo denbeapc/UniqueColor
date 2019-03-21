@@ -6122,8 +6122,9 @@
       "projectName": "UniqueColor.iOS",
       "projectPath": "/Users/piersondenbeau/unique-color/UniqueColor/UniqueColor.iOS/UniqueColor.iOS.csproj",
       "packagesPath": "/Users/piersondenbeau/.nuget/packages/",
-      "outputPath": "/Users/piersondenbeau/unique-color/UniqueColor/UniqueColor.iOS/obj",
+      "outputPath": "/Users/piersondenbeau/unique-color/UniqueColor/UniqueColor.iOS/obj/",
       "projectStyle": "PackageReference",
+      "skipContentFileWrite": true,
       "configFilePaths": [
         "/Users/piersondenbeau/.config/NuGet/NuGet.Config"
       ],

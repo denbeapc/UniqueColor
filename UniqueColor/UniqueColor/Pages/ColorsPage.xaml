@@ -36,11 +36,16 @@
                          HorizontalOptions="Center"
                          Margin="15,0">
                 <Button x:Name="generateButton"
-                        Text="Generate Colors"
+                        Text="Generate"
                         Style="{DynamicResource DefaultButton}"
                         IsEnabled="{Binding ButtonEnabled}"
                         Pressed="Handle_GeneratePressed"/>
                 
+                <Button x:Name="saveButton"
+                        Text="Save"
+                        Style="{DynamicResource DefaultButton}"
+                        Pressed="Handle_SavePressed"/>
+                    
                 <Button x:Name="clearButton"
                         Text="Clear"
                         Style="{DynamicResource ErrorButton}"
